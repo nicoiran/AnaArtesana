@@ -99,7 +99,7 @@ app.post("/webhook", async (req, res) => {
           }
           else {
               msg_body = "Lo siento pero no entendí tu respuesta, por favor envia el numero que hace referencia a la opción de tu elección. Muchas gracias \n Que tipo de artesanía estas buscando? responde con el numero que corresponda \n 1- Ñanduti \n 2- Ao Poi \n 3- Encaje Yú \n 4- Filigrana";
-              
+              i = 1
               console.log(i);
               break;
               }
@@ -138,7 +138,7 @@ app.post("/webhook", async (req, res) => {
           }
           else {
               msg_body = "Lo siento pero no entendí tu respuesta, por favor envia el numero que hace referencia a la opción de tu elección. Muchas gracias \n 1-volver al menú principal \n 0- finalizar";
-              
+              i = 1
               console.log(i);
               break
               }
@@ -147,7 +147,7 @@ app.post("/webhook", async (req, res) => {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
               msg_body = "Hola! Soy Ana la Artesana, tu asistente virtual para encontrar las mejores artesanías en Paraguay. para continuar responde con cualquier mensaje. \n Muchas gracias por tu interés! con tus compras estas ayudando a muchas familias paraguayas que hacen de las artesanías su medio de subsistencia y ayudan a preservar nuestra identidad cultural. \n Que tipo de artesanía estas buscando? responde con el numero que corresponda \n 1- Ñanduti \n 2- Ao Poi \n 3- Encaje Yú \n 4- Filigrana";
-              i -= 2;
+              i = 1;
               console.log(i);
               break
               }
@@ -156,8 +156,17 @@ app.post("/webhook", async (req, res) => {
               console.log(nombre)
               msg_body = "Muchas gracias por confiar en Ana la Artesana, tu asistente virtual que conecta con los artesanos del Paraguay, queremos seguir mejorando para el usuario y también los artesanos de nuestro país, para evaluar tu experiencia de uso podes completar el siguiente formulario ";
               console.log(i);
+              i = 0
               break
             }
+          else {
+            nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
+              console.log(nombre)
+              msg_body = "Lo siento pero no entendi tu respuesta, favor volver a intentar ";
+              i = 3
+              console.log(i);
+              
+          }
         }
 
         await axios({
