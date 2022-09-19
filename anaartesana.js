@@ -99,7 +99,7 @@ app.post("/webhook", async (req, res) => {
           }
           else {
               msg_body = "Lo siento pero no entendí tu respuesta, por favor envia el numero que hace referencia a la opción de tu elección. Muchas gracias \n Que tipo de artesanía estas buscando? responde con el numero que corresponda \n 1- Ñanduti \n 2- Ao Poi \n 3- Encaje Yú \n 4- Filigrana";
-              i = 1
+              i = 2
               console.log(i);
               break;
               }
