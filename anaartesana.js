@@ -66,7 +66,7 @@ app.post("/webhook", async (req, res) => {
             break;
           case 1:
             if (msg_body == "1") {
-              nombre = req.body.entry[2].changes[2].value.messages[2].text.body;
+              nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
               msg_body = "Gracias por elegir Ñanduti! para esta artesanía tenemos recomendaciones en las siguientes ciudades: responde con el número que corresponda para avanzar \n 1- Asunción: \n 2- Itagua. \n 3- Ita \n 4- caacupe";
               i += 1;
