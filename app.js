@@ -1,11 +1,16 @@
-/*
- * Starter Project for WhatsApp Echo Bot Tutorial
- *
- * Remix this as the starting point for following the WhatsApp Echo Bot tutorial
- *
- */
+/*==============================================================================
+Project:       ANA ARTESANA
+Author:        CASA BARATHEON
+Description:   BOT DE WHATSAAP
+----------------------------------------------------------------------
+Creation Date:    19 / SEPTIEMBRE / 2022
+==============================================================================*/
 
+/* Intrucciones: 
 
+*Agregar instrucciones para hacer funcionar el BOT
+
+*/
 "use strict";
 
 // Access token for your app
@@ -59,7 +64,7 @@ app.post("/webhook", async (req, res) => {
           if (type == 'text') {
             nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
             console.log(nombre)
-            msg_body = "Hola! Soy Ana la Artesana, tu asistente virtual para encontrar las mejores artesanías en Paraguay. para continuar responde con cualquier mensaje. \n Muchas gracias por tu interés! con tus compras estas ayudando a muchas familias paraguayas que hacen de las artesanías su medio de subsistencia y ayudan a preservar nuestra identidad cultural. \n Que tipo de artesanía estas buscando? responde con el numero que corresponda \n 1- Ñanduti \n 2- Ao Poi \n 3- Encaje Yú \n 4- Filigrana \n 0- Finalizar";
+            msg_body = "Hola! 👋🏻 Soy *Ana la artesana*, tu asistente virtual para encontrar las mejores artesanías en Paraguay. 🇵🇾 \n\n *¿Qué tipo de artesanía estás buscando?*\n_Responde con el número que corresponda_\n\n *1-* Ñanduti \n *2-* Tallado de madera \n *3-* Ao po´i \n *4-* Filigrana \n *5-* Cuero \n *6-* Cerámica";
             i += 1;
             console.log(i);
             }
@@ -68,7 +73,7 @@ app.post("/webhook", async (req, res) => {
             if (msg_body == "1") {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Gracias por elegir Ñanduti! para esta artesanía tenemos recomendaciones en las siguientes ciudades: responde con el número que corresponda para avanzar \n 1- Asunción: \n 2- Itagua. \n 3- Ita \n 4- caacupe \n 0- Finalizar";
+              msg_body = "Seleccionaste *Ñanduti* para esta artesanía tenemos recomendaciones en las siguientes ciudades:\n_Responde con el número que corresponda_\n\n*1-* Pirayú \n*2-* Itauguá \n*3-* Asunción \n*0-* Finalizar";
               i += 1;
               console.log(i);
               break;
@@ -76,7 +81,7 @@ app.post("/webhook", async (req, res) => {
           else if (msg_body == "2") {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Gracias por elegir Ao poi! para esta artesanía tenemos recomendaciones en las siguientes ciudades: responde con el número que corresponda para avanzar \n 1- Asunción: \n 2- Itagua. \n 3- Ita \n 4- caacupe \n 0- Finalizar";
+              msg_body = "Seleccionaste *Tallado de madera* para esta artesanía tenemos recomendaciones en las siguientes ciudades:\n_Responde con el número que corresponda_\n\n*1-* Pirayú \n*2-* Itauguá \n*3-* Asunción \n*0-* Finalizar";
               i += 1;
               console.log(i);
               break;
@@ -84,7 +89,7 @@ app.post("/webhook", async (req, res) => {
           else if (msg_body == "3") {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Gracias por elegir Encaje Yu! para esta artesanía tenemos recomendaciones en las siguientes ciudades: responde con el número que corresponda para avanzar \n 1- Asunción: \n 2- Itagua. \n 3- Ita \n 4- caacupe \n 0- Finalizar";
+              msg_body = "Seleccionaste *Ao po´i* para esta artesanía tenemos recomendaciones en las siguientes ciudades:\n_Responde con el número que corresponda_\n\n*1-* Pirayú \n*2-* Itauguá \n*3-* Asunción \n*0-* Finalizar";
               i += 1;
               console.log(i);
               break;
@@ -92,21 +97,38 @@ app.post("/webhook", async (req, res) => {
           else if (msg_body == "4") {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Gracias por elegir Filigrana! para esta artesanía tenemos recomendaciones en las siguientes ciudades: responde con el número que corresponda para avanzar \n 1- Asunción: \n 2- Itagua. \n 3- Ita \n 4- caacupe \n 0- Finalizar";
+              msg_body = "Seleccionaste *Filigrana* para esta artesanía tenemos recomendaciones en las siguientes ciudades:\n_Responde con el número que corresponda_\n\n*1-* Pirayú \n*2-* Itauguá \n*3-* Asunción \n*0-* Finalizar";
               i += 1;
               console.log(i);
               break;
+            }
+              else if (msg_body == "5") {
+                nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
+                console.log(nombre)
+                msg_body = "Seleccionaste *Cuero* para esta artesanía tenemos recomendaciones en las siguientes ciudades:\n_Responde con el número que corresponda_\n\n*1-* Pirayú \n*2-* Itauguá \n*3-* Asunción \n*0-* Finalizar";
+                i += 1;
+                console.log(i);
+                break;
           }
+          else if (msg_body == "6") {
+            nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
+            console.log(nombre)
+            msg_body = "Seleccionaste *Cerámica* para esta artesanía tenemos recomendaciones en las siguientes ciudades:\n_Responde con el número que corresponda_\n\n*1-* Pirayú \n*2-* Itauguá \n*3-* Asunción \n*0-* Finalizar";
+            i += 1;
+            console.log(i);
+            break;
+      }
           else if (msg_body == 0) {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Muchas gracias por confiar en Ana la Artesana, tu asistente virtual que conecta con los artesanos del Paraguay, para volver a iniciar responde con cualquier mensaje";i = 2
+              msg_body = "Muchas gracias por confiar en Ana la Artesana, tu asistente virtual que conecta con los artesanos del Paraguay, para volver a iniciar responde con cualquier mensaje";
+              i = 2
               console.log(i);
               i = 0
               break
             }
           else {
-              msg_body = "Lo siento pero no entendí tu respuesta, por favor envia el numero que hace referencia a la opción de tu elección. \n Que tipo de artesanía estas buscando? responde con el numero que corresponda \n 1- Ñanduti \n 2- Ao Poi \n 3- Encaje Yú \n 4- Filigrana \n 0- Finalizar";
+              msg_body = "Lo siento pero no entendí tu respuesta, por favor envía el número que hace referencia a la opción de tu elección.\n\n*¿Qué tipo de artesanía estas buscando?*\n_Responde con el número que corresponda_\n\n*1-* Ñanduti \n*2-* Tallado de madera \n*3-* Ao po´i \n*4-* Filigrana \n*5-* Cuero \n*6-* Cerámica\n*0-* Finalizar";
               i = 1
               console.log(i);
               break;
@@ -115,7 +137,7 @@ app.post("/webhook", async (req, res) => {
             if (msg_body == '1') {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "La ciudad que elegiste es Asunción, en la misma tenemos los siguientes artesanos para recomendarte: \n - Carlos Lopez: 0981 555511 https://goo.gl/maps/VLPV6V71ijQLXupc8 \n - Felipe cañete: 09871464415 https://goo.gl/maps/VLPV6V71ijQLXupc8 \n Espero que haya sido de ayuda! para continuar responde con los siguientes nros: \n 1- volver al menú principal \n 0- finalizar";
+              msg_body = "Seleccionaste la ciudad de *Pirayú* en la misma tenemos los siguientes artesanos para recomendarte:\n\n*- Nombre:* Laura Galeano de Martinez \n*- Celular:* 0975-737-322 \n*- Ubicación:* https://goo.gl/maps/DVgdi6YiGWFUM33y6\n\n*- Nombre:* Adalberto Mancuello:\n*- Celular:* 0983-219-056 \n*- Ubicación:* https://goo.gl/maps/Fp5ch6LjDzenc1qE6 \n\n*- Nombre:* Adela Rodriguez López:\n*- Celular:* 0982-303-936\n*- Ubicación:* https://goo.gl/maps/Fp5ch6LjDzenc1qE6 \n\n*1-* Volver al menú principal \n*0-* Finalizar";
               i += 1;
               console.log(i);
               break;
@@ -123,7 +145,7 @@ app.post("/webhook", async (req, res) => {
           else if (msg_body == "2") {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "La ciudad que elegiste es Itagua, en la misma tenemos los siguientes artesanos para recomendarte: \n - Carlos Lopez: 0981 555511 https://goo.gl/maps/VLPV6V71ijQLXupc8 \n - Felipe cañete: 09871464415 https://goo.gl/maps/VLPV6V71ijQLXupc8 \n Espero que haya sido de ayuda! para continuar responde con los siguientes nros: \n 1- volver al menú principal \n 0- finalizar";
+              msg_body = "Seleccionaste la ciudad de *Itauguá* en la misma tenemos los siguientes artesanos para recomendarte:\n\n*- Nombre:* Zunilda Britez Cardozo \n*- Celular:* 0984-829-195 \n*- Ubicación:* https://goo.gl/maps/oxvDaedfC1QefjCm6 \n\n*- Nombre:* Vicenta Segovia de Aldama:\n*- Celular:* 0983-466-093\n*- Ubicación:* https://goo.gl/maps/8zVfW5UGzqubZzGZ8 \n\n*- Nombre:* Trigidia Rodas Vda. de Marquez:\n*- Celular:* 0983-460-251\n*- Ubicación:* https://goo.gl/maps/m3QZhMhBvdW9Uyqs9 \n\n*1-* Volver al menú principal \n*0-* Finalizar";
               i += 1;
               console.log(i);
               break;
@@ -131,15 +153,7 @@ app.post("/webhook", async (req, res) => {
           else if (msg_body == "3") {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "La ciudad que elegiste es Ita, en la misma tenemos los siguientes artesanos para recomendarte: \n - Carlos Lopez: 0981 555511 https://goo.gl/maps/VLPV6V71ijQLXupc8 \n - Felipe cañete: 09871464415 https://goo.gl/maps/VLPV6V71ijQLXupc8 \n Espero que haya sido de ayuda! para continuar responde con los siguientes nros:  \n 1- volver al menú principal \n 0- finalizar";
-              i += 1;
-              console.log(i);
-              break;
-          }
-          else if (msg_body == "4") {
-              nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
-              console.log(nombre)
-              msg_body = "La ciudad que elegiste es Caacupe, en la misma tenemos los siguientes artesanos para recomendarte: \n - Carlos Lopez: 0981 555511 https://goo.gl/maps/VLPV6V71ijQLXupc8 \n - Felipe cañete: 09871464415 https://goo.gl/maps/VLPV6V71ijQLXupc8 \n Espero que haya sido de ayuda! para continuar responde con los siguientes nros: \n 1- volver al menú principal \n 0- finalizar";
+              msg_body = "Seleccionaste la ciudad de *Asunción* en la misma tenemos los siguientes artesanos para recomendarte:\n\n*- Nombre:* Maria Catalina Nieto Diaz de Vivar \n*- Celular:* 0994-504.617 \n*- Ubicación:* https://goo.gl/maps/SjSzRyZgt8PzXWxF9 \n\n*- Nombre:* Eulogia Amada Fretes Pesoa:\n*- Celular:* 0981-574-421\n*- Ubicación:* https://goo.gl/maps/i8nCDwgfSNuwkYzT9 \n\n*- Nombre:* Diana Noemi Fretes:\n*- Celular:* 0981-994-567\n*- Ubicación:* https://goo.gl/maps/c6fy5fp3PoxQUff16 \n\n*1-* Volver al menú principal \n*0-* Finalizar";
               i += 1;
               console.log(i);
               break;
@@ -153,7 +167,7 @@ app.post("/webhook", async (req, res) => {
               break
             }
           else {
-              msg_body = "Lo siento pero no entendí tu respuesta, por favor envia el numero que hace referencia a la opción de tu elección. Muchas gracias \n 1-volver al menú principal \n 0- finalizar";
+              msg_body = "Lo siento pero no entendí tu respuesta, por favor envia el número que hace referencia a la opción de tu elección. Muchas gracias\n\n*1-* Volver al menú principal \n*0-* Finalizar";
               i = 1
               console.log(i);
               break
@@ -162,7 +176,7 @@ app.post("/webhook", async (req, res) => {
             if (msg_body == 1) {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Hola! Soy Ana la Artesana, tu asistente virtual para encontrar las mejores artesanías en Paraguay. para continuar responde con cualquier mensaje. \n Muchas gracias por tu interés! con tus compras estas ayudando a muchas familias paraguayas que hacen de las artesanías su medio de subsistencia y ayudan a preservar nuestra identidad cultural. \n Que tipo de artesanía estas buscando? responde con el numero que corresponda \n 1- Ñanduti \n 2- Ao Poi \n 3- Encaje Yú \n 4- Filigrana \n 0- Finalizar";
+              msg_body = "Hola! Soy *Ana la artesana*, tu asistente virtual para encontrar las mejores artesanías en Paraguay. \n\n *¿Qué tipo de artesanía estás buscando?*\n_Responde con el número que corresponda_\n\n *1-* Ñanduti \n *2-* Tallado de madera \n *3-* Ao po´i \n *4-* Filigrana \n *5-* Cuero \n *6-* Cerámica\n *0-* finalizar";
               i = 1;
               console.log(i);
               break
@@ -170,7 +184,7 @@ app.post("/webhook", async (req, res) => {
           else if (msg_body == 0) {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Muchas gracias por confiar en Ana la Artesana, tu asistente virtual que conecta con los artesanos del Paraguay, queremos seguir mejorando para el usuario y también los artesanos de nuestro país, para evaluar tu experiencia de uso podes completar el siguiente formulario ";
+              msg_body = "¡Muchas gracias por tu interés! Con tus compras estás ayudando a muchas familias paraguayas que hacen de las artesanías su medio de subsistencia y ayudan a preservar nuestra identidad cultural 💪🏻🇵🇾";
               console.log(i);
               i = 0
               break
@@ -178,7 +192,7 @@ app.post("/webhook", async (req, res) => {
           else {
             nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Lo siento pero no entendi tu respuesta, favor vuelve a intentar \n 1-volver al menú principal \n 0- finalizar ";
+              msg_body = "Lo siento pero no entendi tu respuesta, favor vuelve a intentar \n\n*1-* Volver al menú principal \n*0-* Finalizar";
               i = 3
               console.log(i);
               
@@ -236,4 +250,4 @@ app.get("/webhook", (req, res) => {
       res.sendStatus(403);
     }
   }
-});
+}); 
