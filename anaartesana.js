@@ -59,7 +59,7 @@ app.post("/webhook", async (req, res) => {
           if (type == 'text') {
             nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
             console.log(nombre)
-            msg_body = "Hola! Soy Ana la Artesana, tu asistente virtual para encontrar las mejores artesanías en Paraguay. para continuar responde con cualquier mensaje. \n Muchas gracias por tu interés! con tus compras estas ayudando a muchas familias paraguayas que hacen de las artesanías su medio de subsistencia y ayudan a preservar nuestra identidad cultural. \n Que tipo de artesanía estas buscando? responde con el numero que corresponda \n 1- Ñanduti \n 2- Ao Poi \n 3- Encaje Yú \n 4- Filigrana";
+            msg_body = "Hola! Soy Ana la Artesana, tu asistente virtual para encontrar las mejores artesanías en Paraguay. para continuar responde con cualquier mensaje. \n Muchas gracias por tu interés! con tus compras estas ayudando a muchas familias paraguayas que hacen de las artesanías su medio de subsistencia y ayudan a preservar nuestra identidad cultural. \n Que tipo de artesanía estas buscando? responde con el numero que corresponda \n 1- Ñanduti \n 2- Ao Poi \n 3- Encaje Yú \n 4- Filigrana \n 0- Finalizar";
             i += 1;
             console.log(i);
             }
@@ -68,7 +68,7 @@ app.post("/webhook", async (req, res) => {
             if (msg_body == "1") {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Gracias por elegir Ñanduti! para esta artesanía tenemos recomendaciones en las siguientes ciudades: responde con el número que corresponda para avanzar \n 1- Asunción: \n 2- Itagua. \n 3- Ita \n 4- caacupe";
+              msg_body = "Gracias por elegir Ñanduti! para esta artesanía tenemos recomendaciones en las siguientes ciudades: responde con el número que corresponda para avanzar \n 1- Asunción: \n 2- Itagua. \n 3- Ita \n 4- caacupe \n 0- Finalizar";
               i += 1;
               console.log(i);
               break;
@@ -76,7 +76,7 @@ app.post("/webhook", async (req, res) => {
           else if (msg_body == "2") {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Gracias por elegir Ao poi! para esta artesanía tenemos recomendaciones en las siguientes ciudades: responde con el número que corresponda para avanzar \n 1- Asunción: \n 2- Itagua. \n 3- Ita \n 4- caacupe";
+              msg_body = "Gracias por elegir Ao poi! para esta artesanía tenemos recomendaciones en las siguientes ciudades: responde con el número que corresponda para avanzar \n 1- Asunción: \n 2- Itagua. \n 3- Ita \n 4- caacupe \n 0- Finalizar";
               i += 1;
               console.log(i);
               break;
@@ -84,7 +84,7 @@ app.post("/webhook", async (req, res) => {
           else if (msg_body == "3") {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Gracias por elegir Encaje Yu! para esta artesanía tenemos recomendaciones en las siguientes ciudades: responde con el número que corresponda para avanzar \n 1- Asunción: \n 2- Itagua. \n 3- Ita \n 4- caacupe";
+              msg_body = "Gracias por elegir Encaje Yu! para esta artesanía tenemos recomendaciones en las siguientes ciudades: responde con el número que corresponda para avanzar \n 1- Asunción: \n 2- Itagua. \n 3- Ita \n 4- caacupe \n 0- Finalizar";
               i += 1;
               console.log(i);
               break;
@@ -92,14 +92,22 @@ app.post("/webhook", async (req, res) => {
           else if (msg_body == "4") {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Gracias por elegir Filigrana! para esta artesanía tenemos recomendaciones en las siguientes ciudades: responde con el número que corresponda para avanzar \n 1- Asunción: \n 2- Itagua. \n 3- Ita \n 4- caacupe";
+              msg_body = "Gracias por elegir Filigrana! para esta artesanía tenemos recomendaciones en las siguientes ciudades: responde con el número que corresponda para avanzar \n 1- Asunción: \n 2- Itagua. \n 3- Ita \n 4- caacupe \n 0- Finalizar";
               i += 1;
               console.log(i);
               break;
           }
+          else if (msg_body == 0) {
+              nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
+              console.log(nombre)
+              msg_body = "Muchas gracias por confiar en Ana la Artesana, tu asistente virtual que conecta con los artesanos del Paraguay, para volver a iniciar responde con cualquier mensaje";i = 2
+              console.log(i);
+              i = 0
+              break
+            }
           else {
-              msg_body = "Lo siento pero no entendí tu respuesta, por favor envia el numero que hace referencia a la opción de tu elección. Muchas gracias \n Que tipo de artesanía estas buscando? responde con el numero que corresponda \n 1- Ñanduti \n 2- Ao Poi \n 3- Encaje Yú \n 4- Filigrana";
-              i = 2
+              msg_body = "Lo siento pero no entendí tu respuesta, por favor envia el numero que hace referencia a la opción de tu elección. \n Que tipo de artesanía estas buscando? responde con el numero que corresponda \n 1- Ñanduti \n 2- Ao Poi \n 3- Encaje Yú \n 4- Filigrana \n 0- Finalizar";
+              i = 1
               console.log(i);
               break;
               }
@@ -136,6 +144,14 @@ app.post("/webhook", async (req, res) => {
               console.log(i);
               break;
           }
+          else if (msg_body == 0) {
+              nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
+              console.log(nombre)
+              msg_body = "Muchas gracias por confiar en Ana la Artesana, tu asistente virtual que conecta con los artesanos del Paraguay, para volver a iniciar responde con cualquier mensaje";
+              console.log(i);
+              i = 0
+              break
+            }
           else {
               msg_body = "Lo siento pero no entendí tu respuesta, por favor envia el numero que hace referencia a la opción de tu elección. Muchas gracias \n 1-volver al menú principal \n 0- finalizar";
               i = 1
@@ -146,7 +162,7 @@ app.post("/webhook", async (req, res) => {
             if (msg_body == 1) {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Hola! Soy Ana la Artesana, tu asistente virtual para encontrar las mejores artesanías en Paraguay. para continuar responde con cualquier mensaje. \n Muchas gracias por tu interés! con tus compras estas ayudando a muchas familias paraguayas que hacen de las artesanías su medio de subsistencia y ayudan a preservar nuestra identidad cultural. \n Que tipo de artesanía estas buscando? responde con el numero que corresponda \n 1- Ñanduti \n 2- Ao Poi \n 3- Encaje Yú \n 4- Filigrana";
+              msg_body = "Hola! Soy Ana la Artesana, tu asistente virtual para encontrar las mejores artesanías en Paraguay. para continuar responde con cualquier mensaje. \n Muchas gracias por tu interés! con tus compras estas ayudando a muchas familias paraguayas que hacen de las artesanías su medio de subsistencia y ayudan a preservar nuestra identidad cultural. \n Que tipo de artesanía estas buscando? responde con el numero que corresponda \n 1- Ñanduti \n 2- Ao Poi \n 3- Encaje Yú \n 4- Filigrana \n 0- Finalizar";
               i = 1;
               console.log(i);
               break
@@ -162,7 +178,7 @@ app.post("/webhook", async (req, res) => {
           else {
             nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Lo siento pero no entendi tu respuesta, favor volver a intentar ";
+              msg_body = "Lo siento pero no entendi tu respuesta, favor vuelve a intentar \n 1-volver al menú principal \n 0- finalizar ";
               i = 3
               console.log(i);
               
