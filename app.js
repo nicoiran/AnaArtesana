@@ -128,7 +128,7 @@ app.post("/webhook", async (req, res) => {
               break
             }
           else { //en caso de no recibir un comando correcto re ingresar a la condicion anterior 
-              msg_body = "Lo siento pero no entendí tu respuesta, por favor envía el número que hace referencia a la opción de tu elección.\n\n*¿Qué modalidad de artesanía estas buscando?*\n_Responde con el número que corresponda_\n\n*1-* Ñanduti \n*2-* Tallado de madera \n*3-* Ao po´i \n*4-* Filigrana \n*5-* Cuero \n*6-* Cerámica\n*0-* Finalizar";
+              msg_body = "Lo siento pero no entendí tu respuesta, por favor envía el número que hace referencia a la opción de tu elección.\n\n*¿Qué modalidad de artesanía estas buscando?*\n_Responde con el número que corresponda_\n\n*1-* Ñanduti \n*2-* Tallado en madera \n*3-* Ao po´i \n*4-* Filigrana \n*5-* Cuero \n*6-* Cerámica\n*0-* Finalizar";
               i = 1
               console.log(i);
               break;
