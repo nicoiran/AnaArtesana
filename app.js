@@ -8,7 +8,7 @@ Creation Date:    19 / SEPTIEMBRE / 2022
 
 /* Intrucciones: 
 
-*Agregar instrucciones para hacer funcionar el BOT
+*Agregar instrucciones para hacer funcionar el BOT extraidas de meta for developers
 
 */
 "use strict";
@@ -54,18 +54,18 @@ app.post("/webhook", async (req, res) => {
       ) {
         let phone_number_id =
           req.body.entry[0].changes[0].value.metadata.phone_number_id;
-        let from = req.body.entry[0].changes[0].value.messages[0].from; // extract the phone number from the webhook payload
+        let from = req.body.entry[0].changes[0].value.messages[0].from; // para extraer el numero de telefono
         let type = req.body.entry[0].changes[0].value.messages[0].type;
-        let msg_body =  req.body.entry[0].changes[0].value.messages[0].text.body;
+        let msg_body =  req.body.entry[0].changes[0].value.messages[0].text.body; // para extraer texto del mensaje 
 
 
         switch (i) {
-          case 0:
+          case 0: //iniciar las interacciones 
           if (type == 'text') {
             nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
             console.log(nombre)
             msg_body = "Hola! 👋🏻 Soy *Ana la artesana*, tu asistente virtual para encontrar las mejores artesanías en Paraguay. 🇵🇾 \n\n *¿Qué tipo de artesanía estás buscando?*\n_Responde con el número que corresponda_\n\n *1-* Ñanduti \n *2-* Tallado de madera \n *3-* Ao po´i \n *4-* Filigrana \n *5-* Cuero \n *6-* Cerámica \n *0-* Finalizar";
-            i += 1;
+            i += 1; // avanzar a la siguiente linea de dialogo
             console.log(i);
             }
             break;
@@ -127,7 +127,7 @@ app.post("/webhook", async (req, res) => {
               i = 0
               break
             }
-          else {
+          else { //en caso de no recibir un comando correcto re ingresar a la condicion anterior 
               msg_body = "Lo siento pero no entendí tu respuesta, por favor envía el número que hace referencia a la opción de tu elección.\n\n*¿Qué tipo de artesanía estas buscando?*\n_Responde con el número que corresponda_\n\n*1-* Ñanduti \n*2-* Tallado de madera \n*3-* Ao po´i \n*4-* Filigrana \n*5-* Cuero \n*6-* Cerámica\n*0-* Finalizar";
               i = 1
               console.log(i);
