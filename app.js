@@ -64,7 +64,7 @@ app.post("/webhook", async (req, res) => {
           if (type == 'text') {
             nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
             console.log(nombre)
-            msg_body = "Hola! 👋🏻 Soy *Ana la artesana*, tu asistente virtual para encontrar las mejores artesanías en Paraguay. 🇵🇾 \n\n *¿Qué tipo de artesanía estás buscando?*\n_Responde con el número que corresponda_\n\n *1-* Ñanduti \n *2-* Tallado de madera \n *3-* Ao po´i \n *4-* Filigrana \n *5-* Cuero \n *6-* Cerámica \n *0-* Finalizar";
+            msg_body = "Hola! 👋🏻 Soy *Ana la artesana*, tu asistente virtual para encontrar las mejores artesanías en Paraguay. 🇵🇾 \n\n *¿Qué modalidad de artesanía estás buscando?*\n_Responde con el número que corresponda_\n\n *1-* Ñanduti \n *2-* Tallado en madera \n *3-* Ao po´i \n *4-* Filigrana \n *5-* Cuero \n *6-* Cerámica \n *0-* Finalizar";
             i += 1; // avanzar a la siguiente linea de dialogo
             console.log(i);
             }
@@ -81,7 +81,7 @@ app.post("/webhook", async (req, res) => {
           else if (msg_body == "2") {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Seleccionaste *Tallado de madera* para esta artesanía tenemos recomendaciones en las siguientes ciudades:\n_Responde con el número que corresponda_\n\n*1-* Pirayú \n*2-* Itauguá \n*3-* Asunción \n*0-* Finalizar";
+              msg_body = "Seleccionaste *Tallado en madera* para esta artesanía tenemos recomendaciones en las siguientes ciudades:\n_Responde con el número que corresponda_\n\n*1-* Pirayú \n*2-* Itauguá \n*3-* Asunción \n*0-* Finalizar";
               i += 1;
               console.log(i);
               break;
@@ -128,7 +128,7 @@ app.post("/webhook", async (req, res) => {
               break
             }
           else { //en caso de no recibir un comando correcto re ingresar a la condicion anterior 
-              msg_body = "Lo siento pero no entendí tu respuesta, por favor envía el número que hace referencia a la opción de tu elección.\n\n*¿Qué tipo de artesanía estas buscando?*\n_Responde con el número que corresponda_\n\n*1-* Ñanduti \n*2-* Tallado de madera \n*3-* Ao po´i \n*4-* Filigrana \n*5-* Cuero \n*6-* Cerámica\n*0-* Finalizar";
+              msg_body = "Lo siento pero no entendí tu respuesta, por favor envía el número que hace referencia a la opción de tu elección.\n\n*¿Qué modalidad de artesanía estas buscando?*\n_Responde con el número que corresponda_\n\n*1-* Ñanduti \n*2-* Tallado de madera \n*3-* Ao po´i \n*4-* Filigrana \n*5-* Cuero \n*6-* Cerámica\n*0-* Finalizar";
               i = 1
               console.log(i);
               break;
