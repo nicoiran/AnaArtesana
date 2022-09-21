@@ -153,7 +153,7 @@ app.post("/webhook", async (req, res) => {
           else if (msg_body == "3") {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Seleccionaste la ciudad de *Asunción* en la misma tenemos los siguientes artesanos para recomendarte:\n\n*- Nombre:* Maria Catalina Nieto Diaz de Vivar \n*- Celular:* 0994-504.617 \n*- Ubicación:* https://goo.gl/maps/SjSzRyZgt8PzXWxF9 \n\n*- Nombre:* Eulogia Amada Fretes Pesoa:\n*- Celular:* 0981-574-421\n*- Ubicación:* https://goo.gl/maps/i8nCDwgfSNuwkYzT9 \n\n*- Nombre:* Diana Noemi Fretes:\n*- Celular:* 0981-994-567\n*- Ubicación:* https://goo.gl/maps/c6fy5fp3PoxQUff16 \n\n*1-* Volver al menú principal \n*0-* Finalizar";
+              msg_body = "Seleccionaste la ciudad de *Asunción* en la misma tenemos los siguientes artesanos para recomendarte:\n\n*- Nombre:* Maria Catalina Nieto Diaz de Vivar \n*- Celular:* 0994-504-617 \n*- Ubicación:* https://goo.gl/maps/SjSzRyZgt8PzXWxF9 \n\n*- Nombre:* Eulogia Amada Fretes Pesoa:\n*- Celular:* 0981-574-421\n*- Ubicación:* https://goo.gl/maps/i8nCDwgfSNuwkYzT9 \n\n*- Nombre:* Diana Noemi Fretes:\n*- Celular:* 0981-994-567\n*- Ubicación:* https://goo.gl/maps/c6fy5fp3PoxQUff16 \n\n*1-* Volver al menú principal \n*0-* Finalizar";
               i += 1;
               console.log(i);
               break;
