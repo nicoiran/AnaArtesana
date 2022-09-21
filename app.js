@@ -64,7 +64,7 @@ app.post("/webhook", async (req, res) => {
           if (type == 'text') {
             nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
             console.log(nombre)
-            msg_body = "Hola! 👋🏻 Soy *Ana la artesana*, tu asistente virtual para encontrar las mejores artesanías en Paraguay. 🇵🇾 \n\n *¿Qué tipo de artesanía estás buscando?*\n_Responde con el número que corresponda_\n\n *1-* Ñanduti \n *2-* Tallado de madera \n *3-* Ao po´i \n *4-* Filigrana \n *5-* Cuero \n *6-* Cerámica";
+            msg_body = "Hola! 👋🏻 Soy *Ana la artesana*, tu asistente virtual para encontrar las mejores artesanías en Paraguay. 🇵🇾 \n\n *¿Qué tipo de artesanía estás buscando?*\n_Responde con el número que corresponda_\n\n *1-* Ñanduti \n *2-* Tallado de madera \n *3-* Ao po´i \n *4-* Filigrana \n *5-* Cuero \n *6-* Cerámica \n *0-* Finalizar";
             i += 1;
             console.log(i);
             }
@@ -121,7 +121,7 @@ app.post("/webhook", async (req, res) => {
           else if (msg_body == 0) {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Muchas gracias por confiar en Ana la Artesana, tu asistente virtual que conecta con los artesanos del Paraguay, para volver a iniciar responde con cualquier mensaje";
+              msg_body = "Muchas gracias por confiar en *Ana la Artesana*, tu asistente virtual que conecta con los artesanos del Paraguay. \nPara volver a iniciar responde con un mensaje.";
               i = 2
               console.log(i);
               i = 0
@@ -161,14 +161,14 @@ app.post("/webhook", async (req, res) => {
           else if (msg_body == 0) {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Muchas gracias por confiar en Ana la Artesana, tu asistente virtual que conecta con los artesanos del Paraguay, para volver a iniciar responde con cualquier mensaje";
+              msg_body = "Muchas gracias por confiar en *Ana la Artesana*, tu asistente virtual que conecta con los artesanos del Paraguay. \nPara volver a iniciar responde con un mensaje.";
               console.log(i);
               i = 0
               break
             }
           else {
-              msg_body = "Lo siento pero no entendí tu respuesta, por favor envia el número que hace referencia a la opción de tu elección. Muchas gracias\n\n*1-* Volver al menú principal \n*0-* Finalizar";
-              i = 1
+              msg_body = "Lo siento pero no entendí tu respuesta, por favor envia el *número* que hace referencia a la opción de tu elección. Muchas gracias\n\n \n*1-* Pirayú \n*2-* Itauguá \n*3-* Asunción \n*0-* Finalizar";
+              i = 2
               console.log(i);
               break
               }
@@ -176,7 +176,7 @@ app.post("/webhook", async (req, res) => {
             if (msg_body == 1) {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Hola! Soy *Ana la artesana*, tu asistente virtual para encontrar las mejores artesanías en Paraguay. \n\n *¿Qué tipo de artesanía estás buscando?*\n_Responde con el número que corresponda_\n\n *1-* Ñanduti \n *2-* Tallado de madera \n *3-* Ao po´i \n *4-* Filigrana \n *5-* Cuero \n *6-* Cerámica\n *0-* finalizar";
+              msg_body = "Hola! 👋🏻 Soy *Ana la artesana*, tu asistente virtual para encontrar las mejores artesanías en Paraguay. 🇵🇾 \n\n *¿Qué tipo de artesanía estás buscando?*\n_Responde con el número que corresponda_\n\n *1-* Ñanduti \n *2-* Tallado de madera \n *3-* Ao po´i \n *4-* Filigrana \n *5-* Cuero \n *6-* Cerámica \n *0-* Finalizar";
               i = 1;
               console.log(i);
               break
@@ -184,7 +184,7 @@ app.post("/webhook", async (req, res) => {
           else if (msg_body == 0) {
               nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "¡Muchas gracias por tu interés! Con tus compras estás ayudando a muchas familias paraguayas que hacen de las artesanías su medio de subsistencia y ayudan a preservar nuestra identidad cultural 💪🏻🇵🇾";
+              msg_body = "¡Muchas gracias por tu interés! Con tus compras estás ayudando a muchas familias paraguayas que hacen de las artesanías su medio de subsistencia y ayudan a preservar nuestra identidad cultural 💪🏻🇵🇾.\nPara volver a iniciar responde a este mensaje. ";
               console.log(i);
               i = 0
               break
@@ -192,7 +192,7 @@ app.post("/webhook", async (req, res) => {
           else {
             nombre = req.body.entry[0].changes[0].value.messages[0].text.body;
               console.log(nombre)
-              msg_body = "Lo siento pero no entendi tu respuesta, favor vuelve a intentar \n\n*1-* Volver al menú principal \n*0-* Finalizar";
+              msg_body = "Lo siento pero no entendi tu respuesta, favor responde con el *numero* que haga referencia a tu seleccion \n\n*1-* Volver al menú principal \n*0-* Finalizar";
               i = 3
               console.log(i);
               
